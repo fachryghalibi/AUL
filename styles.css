@@ -49,10 +49,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-}
-
-html {
     overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -519,6 +517,7 @@ body {
     overflow: hidden;
     transition: all var(--transition-base);
     box-shadow: var(--shadow-md);
+    will-change: transform;
 }
 
 .bento-card.large {
@@ -682,6 +681,7 @@ body {
     overflow: hidden;
     transition: all var(--transition-base);
     box-shadow: var(--shadow-md);
+    will-change: transform;
 }
 
 .pancasila-card:hover {
@@ -1930,15 +1930,23 @@ button:focus,
    END OF STYLESHEET
    =================================== */
 
-   /* Prevent horizontal overflow */
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 * {
     max-width: 100%;
 }
 
-.section,
+.section {
+    overflow: hidden;
+}
+
 .container,
 .challenge-container,
 .impact-container,
 .model-framework {
-    overflow-x: hidden;
+    overflow: visible;
 }
